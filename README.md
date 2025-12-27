@@ -774,7 +774,7 @@ This project is licensed under the MIT License.
 
 ## 👥 Authors
 
-- **TripHunter** - *Initial work* - [TripHunter](https://triphunter.vn)
+- **duydao** - *Initial work* - [duydao](https://duydao.vn)
 
 ## 🙏 Acknowledgments
 

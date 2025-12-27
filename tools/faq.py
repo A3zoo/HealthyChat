@@ -16,5 +16,5 @@ faqs_retriever = _vectors.as_retriever()
 faqs_tool = create_retriever_tool(
     faqs_retriever,
     "faqs_retriever",
-    "Tìm kiếm và trả về câu trả lời cho câu hỏi thường gặp của khách hàng về TripHunter và dichj vụ của TripHunter",
+    "Tìm kiếm và trả về câu trả lời cho câu hỏi thường gặp của khách hàng về duydao và dichj vụ của duydao",
 )

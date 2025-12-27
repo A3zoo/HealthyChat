@@ -2,7 +2,7 @@
 name = "chat-service"
 version = "0.1.0"
 description = ""
-authors = ["TripHunter <info@triphunter.vn>"]
+authors = ["duydao"]
 readme = "README.md"
 package-mode = false
 
