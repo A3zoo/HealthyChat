@@ -14,6 +14,9 @@ from tools.medicine import heart_predict_tool
 from tools.faq import faqs_tool
 from tools.medicine import medicine_tool
 from models.message import CreateMessageModel
+from events.event_bus import event_bus
+from events.event_models import HeartPredictionCompletedEvent
+from events.event_types import EventType
 
 
 def get_history(session_id: UUID) -> BaseChatMessageHistory:

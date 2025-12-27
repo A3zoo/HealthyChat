@@ -11,6 +11,9 @@ from models.message import (
 )
 
 from models.chat import Chat
+from events.event_bus import event_bus
+from events.event_models import MessageCreatedEvent
+from events.event_types import EventType
 
 
 def get_messages(chat_id: UUID, limit: int) -> list[MessageModel]:
@@ -57,4 +60,18 @@ def create_message(payload: CreateMessageModel) -> Optional[MessageModel]:
         user_message = Message(**payload.model_dump())
         session.add(user_message)
         session.commit()
-        return MessageModel.model_validate(user_message)
+        session.refresh(user_message)
+        
+        message_model = MessageModel.model_validate(user_message)
+        
+        # Publish event - Event-Driven Architecture
+        event = MessageCreatedEvent(
+            chat_id=payload.chat_id,
+            user_id=payload.user_id,
+            message_id=message_model.id,
+            content=payload.content,
+            is_bot_message=(payload.user_id is None),
+        )
+        event_bus.publish(event)
+        
+        return message_model

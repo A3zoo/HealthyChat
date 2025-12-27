@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-red-50 via-white to-pink-50 min-h-screen;
+  }
+}
+
+@layer components {
+  .message-bubble {
+    @apply rounded-2xl px-4 py-3 max-w-[80%] break-words;
+  }
+  
+  .message-user {
+    @apply bg-gradient-to-r from-red-500 to-pink-500 text-white ml-auto;
+  }
+  
+  .message-bot {
+    @apply bg-white text-gray-800 shadow-md border border-gray-100;
+  }
+  
+  .chat-input {
+    @apply w-full px-4 py-3 rounded-full border-2 border-gray-200 focus:outline-none focus:border-red-400 transition-colors;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
+
